@@ -129,22 +129,21 @@ h1, h2, h3, h4 { font-family: 'Space Grotesk', 'Inter', sans-serif; line-height:
 .stat b { display: block; font-family: 'Space Grotesk'; font-size: 1.6rem; line-height: 1.2; }
 .stat span { font-size: .78rem; color: var(--faint); }
 
-.hero-card { position: relative; aspect-ratio: 1; max-width: 440px; justify-self: center; width: 100%; }
-.orbit { position: absolute; inset: 0; border-radius: 50%; border: 1px dashed var(--border); }
-.orbit.o2 { inset: 14%; }
-.orbit .chip { position: absolute; padding: 8px 14px; border-radius: 12px; background: var(--bg-2); border: 1px solid var(--border); font-size: .85rem; font-weight: 600; box-shadow: var(--shadow); white-space: nowrap; display: flex; align-items: center; gap: 8px; }
-.orbit .chip i { color: var(--a2); }
-.orbit .chip.c1 { top: -4%; left: 50%; translate: -50% 0; }
-.orbit .chip.c2 { bottom: 10%; left: -4%; }
-.orbit .chip.c3 { bottom: 10%; right: -4%; }
-.orbit.o2 .chip.c1 { top: 46%; left: -10%; translate: 0 0; }
-.orbit.o2 .chip.c2 { top: 46%; right: -10%; left: auto; bottom: auto; }
-.orbit .chip { animation: float 6s ease-in-out infinite; }
-.orbit .chip.c2 { animation-delay: -2s; }
-.orbit .chip.c3 { animation-delay: -4s; }
-.orbit.o2 .chip { animation-delay: -3s; }
-@keyframes float { 50% { transform: translateY(-8px); } }
-.avatar { position: absolute; inset: 28%; border-radius: 50%; background: var(--grad); display: grid; place-items: center; font-family: 'Space Grotesk'; font-size: clamp(2.5rem, 6vw, 3.8rem); font-weight: 700; color: #fff; box-shadow: var(--shadow), inset 0 0 0 6px rgba(255, 255, 255, .1); }
+.hero-visual { position: relative; width: 100%; max-width: 480px; justify-self: end; }
+.code-card { background: #0f1420; color: #d6dae3; border-radius: 16px; border: 1px solid rgba(255, 255, 255, .08); box-shadow: 0 30px 60px -30px rgba(15, 23, 42, .55); overflow: hidden; font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; }
+.code-top { display: flex; align-items: center; gap: 7px; padding: 12px 16px; background: #141a28; border-bottom: 1px solid rgba(255, 255, 255, .06); }
+.code-top i { width: 10px; height: 10px; border-radius: 50%; background: #3a4256; display: block; }
+.code-top span { margin-left: 10px; font-size: .78rem; color: #8a93a6; }
+.code-body { padding: 20px 22px 56px; font-size: .86rem; line-height: 1.85; white-space: pre; overflow-x: auto; }
+.code-body .ln { display: inline-block; width: 22px; color: #4a5368; user-select: none; }
+.tk-k { color: #8fb0ee; } .tk-v { color: #e6c07b; } .tk-s { color: #a5c98a; } .tk-n { color: #d19a66; } .tk-c { color: #6b7489; font-style: italic; } .tk-p { color: #aab2c2; }
+.profile-chip { position: absolute; right: 24px; bottom: -30px; display: flex; align-items: center; gap: 12px; padding: 12px 16px 12px 12px; border-radius: 14px; background: var(--bg-2); border: 1px solid var(--border); box-shadow: var(--shadow); animation: float 7s ease-in-out infinite; }
+.profile-chip .pc-avatar { width: 42px; height: 42px; border-radius: 10px; background: var(--grad); color: #fff; display: grid; place-items: center; font-family: 'Space Grotesk'; font-weight: 700; }
+.profile-chip b { display: block; font-size: .92rem; line-height: 1.3; }
+.profile-chip small { color: var(--faint); font-size: .78rem; }
+.stat-chip { position: absolute; right: -18px; top: -22px; padding: 10px 16px; border-radius: 12px; background: var(--bg-2); border: 1px solid var(--border); box-shadow: var(--shadow); animation: float 7s ease-in-out -3.5s infinite; }
+.stat-chip b { font-family: 'Space Grotesk'; font-size: 1.15rem; display: block; line-height: 1.2; color: var(--a1); }
+.stat-chip small { color: var(--faint); font-size: .75rem; }
 
 /* ---------- Sections ---------- */
 section { padding: 100px 0; position: relative; }
@@ -186,6 +185,11 @@ section { padding: 100px 0; position: relative; }
 .browser-bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(255, 255, 255, .5); display: block; }
 .browser-bar .url { margin-left: 8px; flex: 1; font-size: .72rem; color: rgba(255, 255, 255, .9); background: rgba(0, 0, 0, .25); padding: 3px 10px; border-radius: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: ui-monospace, monospace; }
 .browser-view { height: 168px; background: color-mix(in srgb, var(--c1) 82%, #000); position: relative; overflow: hidden; display: grid; place-items: center; }
+.browser-view .logo-img { max-width: 72%; max-height: 92px; object-fit: contain; transition: transform .6s var(--ease); position: relative; z-index: 1; }
+.site-card:hover .browser-view .logo-img { transform: scale(1.05); }
+.browser-view.has-logo { background: var(--logo-bg, #ffffff); }
+.browser-view.has-logo .mono { display: none; color: #15181e; }
+.browser-view.has-logo .mono small { color: #5b6270; }
 .browser-view .mono { font-family: 'Space Grotesk'; font-weight: 700; font-size: 2.6rem; color: #fff; letter-spacing: -.03em; transition: transform .6s var(--ease); text-align: center; line-height: 1; }
 .browser-view .mono small { display: block; font-size: .78rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: rgba(255, 255, 255, .65); margin-top: 10px; font-family: 'Inter'; }
 .site-card:hover .browser-view .mono { transform: scale(1.06); }
@@ -309,7 +313,7 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .hero-grid, .about-grid, .edu-grid { grid-template-columns: 1fr; }
-  .hero-card { max-width: 320px; order: -1; }
+  .hero-visual { justify-self: center; margin: 10px 0 30px; }
   .proj-grid { grid-template-columns: 1fr; }
   .mini-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -322,9 +326,9 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .mini-grid { grid-template-columns: 1fr; }
   .sites-grid { grid-template-columns: 1fr; }
-  .hero-card { max-width: 260px; }
-  .orbit .chip { font-size: .72rem; padding: 6px 10px; }
-  .orbit.o2 .chip { display: none; }
+  .code-body { font-size: .74rem; padding: 16px 14px 22px; }
+  .profile-chip { right: 12px; bottom: -30px; }
+  .code-body { padding-bottom: 50px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -365,12 +369,12 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div>
-      <span class="badge reveal"><span class="pulse"></span> Open to full-time roles and freelance projects</span>
+      <span class="badge reveal"><span class="pulse"></span> Taking on new projects at ECOMFLEX</span>
       <h1 class="reveal" style="--d:.08s">Hi, I'm <span class="grad-text">Naresh V</span></h1>
       <div class="role reveal" style="--d:.16s">I build <span class="typed" id="typed">SaaS platforms</span><span class="caret"></span></div>
       <p class="lead reveal" style="--d:.24s">
-        Software Engineer with 1.5+ years of full stack experience in Vue.js, Golang, Python and PostgreSQL.
-        Founder and Lead Developer of Celtrix, and the developer behind websites for businesses across India.
+        CEO of ECOMFLEX Solutions Private Limited and Founder of Celtrix. A full stack engineer with 1.5+ years
+        of experience in Vue.js, Golang, Python and PostgreSQL, building SaaS platforms and websites for businesses across India.
       </p>
       <div class="hero-cta reveal" style="--d:.32s">
         <a href="#work" class="btn btn-primary"><i class="fas fa-globe"></i> See websites I built</a>
@@ -383,17 +387,21 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
         <div class="stat"><b data-count="8.39">8.39</b><span>CGPA</span></div>
       </div>
     </div>
-    <div class="hero-card reveal" style="--d:.2s" aria-hidden="true">
-      <div class="orbit">
-        <div class="chip c1"><i class="fab fa-vuejs"></i> Vue.js</div>
-        <div class="chip c2"><i class="fab fa-golang"></i> Golang</div>
-        <div class="chip c3"><i class="fas fa-database"></i> PostgreSQL</div>
+    <div class="hero-visual reveal" style="--d:.2s" aria-hidden="true">
+      <div class="code-card">
+        <div class="code-top"><i></i><i></i><i></i><span>naresh.ts</span></div>
+<div class="code-body"><span class="ln">1</span><span class="tk-k">const</span> <span class="tk-v">naresh</span> <span class="tk-p">= {</span>
+<span class="ln">2</span>  role<span class="tk-p">:</span> <span class="tk-s">"CEO, ECOMFLEX Solutions"</span><span class="tk-p">,</span>
+<span class="ln">3</span>  founder<span class="tk-p">:</span> <span class="tk-s">"Celtrix"</span><span class="tk-p">,</span>
+<span class="ln">4</span>  stack<span class="tk-p">: [</span><span class="tk-s">"Vue.js"</span><span class="tk-p">,</span> <span class="tk-s">"Golang"</span><span class="tk-p">,</span>
+<span class="ln">5</span>          <span class="tk-s">"Python"</span><span class="tk-p">,</span> <span class="tk-s">"PostgreSQL"</span><span class="tk-p">],</span>
+<span class="ln">6</span>  websitesShipped<span class="tk-p">:</span> <span class="tk-n">5</span><span class="tk-p">,</span>
+<span class="ln">7</span>  basedIn<span class="tk-p">:</span> <span class="tk-s">"Bengaluru, IN"</span><span class="tk-p">,</span>
+<span class="ln">8</span><span class="tk-p">};</span>
+<span class="ln">9</span>
+<span class="ln">10</span><span class="tk-c">// Let's build something together.</span></div>
       </div>
-      <div class="orbit o2">
-        <div class="chip c1"><i class="fab fa-python"></i> Python</div>
-        <div class="chip c2"><i class="fab fa-docker"></i> Docker</div>
-      </div>
-      <div class="avatar">NV</div>
+      <div class="profile-chip"><span class="pc-avatar">NV</span><div><b>Naresh V</b><small>CEO · ECOMFLEX Solutions</small></div></div>
     </div>
   </div>
 </section>
@@ -408,7 +416,7 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
     <div class="about-grid">
       <div class="about-text reveal">
         <p>I'm a <strong>Full Stack Developer</strong> based in Bengaluru who enjoys taking an idea from a rough brief all the way to a deployed, production-ready product.</p>
-        <p>At <strong>EZEU</strong> I built a multi-tenant Temple Management SaaS with Vue.js, Golang and PostgreSQL. Since then I've been working as a <strong>freelance full stack developer</strong>, delivering websites and web apps directly for clients, and running <strong>Celtrix</strong>, an influencer marketing platform I founded that now serves 4,000+ active users.</p>
+        <p>At <strong>EZEU</strong> I built a multi-tenant Temple Management SaaS with Vue.js, Golang and PostgreSQL. Today I lead <strong>ECOMFLEX Solutions Private Limited</strong> as CEO, delivering websites and web apps for clients, and run <strong>Celtrix</strong>, an influencer marketing platform I founded that now serves 4,000+ active users.</p>
         <p>I'm currently deepening my skills in <strong>Artificial Intelligence with Python</strong> at Dandes Academy.</p>
       </div>
       <div class="card reveal" style="--d:.1s">
@@ -416,7 +424,7 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
           <li><i class="fas fa-location-dot"></i><div><small>Location</small><span>Bengaluru, Karnataka</span></div></li>
           <li><i class="fas fa-graduation-cap"></i><div><small>Education</small><span>B.E. Computer Science (Honours), 2025</span></div></li>
           <li><i class="fas fa-rocket"></i><div><small>Founder</small><span>Celtrix · Influencer marketing platform</span></div></li>
-          <li><i class="fas fa-briefcase"></i><div><small>Currently</small><span>Freelance Full Stack Developer</span></div></li>
+          <li><i class="fas fa-briefcase"></i><div><small>Currently</small><span>CEO, ECOMFLEX Solutions Pvt. Ltd.</span></div></li>
         </ul>
       </div>
     </div>
@@ -436,7 +444,7 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
         <span class="latest">LATEST</span>
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">vijayinnovation.com</span></div>
-          <div class="browser-view"><div class="mono">VIT<small>Vijay Innovation Technology</small></div></div>
+          <div class="browser-view has-logo"><img class="logo-img" src="https://vijayinnovation.com/logo.png" alt="Vijay Innovation Technology logo" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.remove('has-logo');this.remove()"><div class="mono">VIT<small>Vijay Innovation Technology</small></div></div>
         </div>
         <div class="site-body">
           <div class="site-top"><span class="site-tag">Precision manufacturing</span><span class="site-num">01</span></div>
@@ -449,7 +457,7 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
       <a class="site-card reveal" href="https://www.reddyconstructions.in/" target="_blank" rel="noopener" style="--c1:#0a3d91; --d:.08s" aria-label="Visit Reddy Constructions website (opens in a new tab)">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">reddyconstructions.in</span></div>
-          <div class="browser-view"><div class="mono">Reddy<small>Constructions</small></div></div>
+          <div class="browser-view has-logo"><img class="logo-img" src="https://www.reddyconstructions.in/logo.png" alt="Reddy Constructions logo" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.remove('has-logo');this.remove()"><div class="mono">Reddy<small>Constructions</small></div></div>
         </div>
         <div class="site-body">
           <div class="site-top"><span class="site-tag">Construction</span><span class="site-num">02</span></div>
@@ -462,12 +470,12 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
       <a class="site-card reveal" href="https://ecomflex.in/" target="_blank" rel="noopener" style="--c1:#1f2937; --d:.16s" aria-label="Visit Ecomflex website (opens in a new tab)">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">ecomflex.in</span></div>
-          <div class="browser-view"><div class="mono">ECOMFLEX<small>Software studio</small></div></div>
+          <div class="browser-view has-logo" style="--logo-bg:#0a0a0f"><img class="logo-img" src="https://ecomflex.in/logo.png" alt="ECOMFLEX logo" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.remove('has-logo');this.remove()"><div class="mono">ECOMFLEX<small>Software studio</small></div></div>
         </div>
         <div class="site-body">
-          <div class="site-top"><span class="site-tag">Software company</span><span class="site-num">03</span></div>
-          <h3>ECOMFLEX</h3>
-          <p>Website for a Bangalore software development company offering SaaS, ERP/CRM, AI and custom web and mobile apps, with services, process, tech stack, portfolio and an enquiry form.</p>
+          <div class="site-top"><span class="site-tag">My company</span><span class="site-num">03</span></div>
+          <h3>ECOMFLEX Solutions</h3>
+          <p>Website for my company, a Bangalore software development firm offering SaaS, ERP/CRM, AI and custom web and mobile apps, with services, process, tech stack, portfolio and an enquiry form.</p>
           <span class="site-visit">Visit ecomflex.in <i class="fas fa-arrow-up-right-from-square"></i></span>
         </div>
       </a>
@@ -475,7 +483,7 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
       <a class="site-card reveal" href="https://www.wecoolpayroll.co.in/" target="_blank" rel="noopener" style="--c1:#0f5e63;" aria-label="Visit Wecool Payroll website (opens in a new tab)">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">wecoolpayroll.co.in</span></div>
-          <div class="browser-view"><div class="mono">Wecool<small>Payroll</small></div></div>
+          <div class="browser-view has-logo"><img class="logo-img" src="https://www.wecoolpayroll.co.in/wecool-logo.png" alt="Wecool Payroll logo" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.remove('has-logo');this.remove()"><div class="mono">Wecool<small>Payroll</small></div></div>
         </div>
         <div class="site-body">
           <div class="site-top"><span class="site-tag">Payroll SaaS</span><span class="site-num">04</span></div>
@@ -512,16 +520,16 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
       <div class="t-item current card reveal">
         <div class="t-head">
           <div>
-            <h3>Freelance Full Stack Developer</h3>
-            <div class="t-org">Self-employed · Bengaluru</div>
+            <h3>Chief Executive Officer</h3>
+            <div class="t-org">ECOMFLEX Solutions Private Limited · Bengaluru</div>
           </div>
           <span class="pill now">Sep 2025 – Present</span>
         </div>
         <ul>
-          <li>Delivered client projects end to end, from requirements through development to deployment.</li>
-          <li>Built web applications using Vue.js, React.js, Golang, Python and PostgreSQL.</li>
-          <li>Integrated APIs, authentication systems, databases and cloud deployment solutions.</li>
-          <li>Worked directly with clients to gather requirements and deliver custom software.</li>
+          <li>Lead the company and its client delivery, taking projects from requirements through development to deployment.</li>
+          <li>Build web applications using Vue.js, React.js, Golang, Python and PostgreSQL.</li>
+          <li>Integrate APIs, authentication systems, databases and cloud deployment solutions.</li>
+          <li>Work directly with clients to scope requirements and deliver custom software, including Vijay Innovation Technology, Reddy Constructions and Wecool Payroll.</li>
         </ul>
         <div class="tags"><span class="tag">Vue.js</span><span class="tag">React.js</span><span class="tag">Golang</span><span class="tag">Python</span><span class="tag">PostgreSQL</span></div>
       </div>
