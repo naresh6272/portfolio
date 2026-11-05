@@ -186,6 +186,7 @@ section { padding: 100px 0; position: relative; }
 .browser-bar .url { margin-left: 8px; flex: 1; font-size: .72rem; color: rgba(255, 255, 255, .9); background: rgba(0, 0, 0, .25); padding: 3px 10px; border-radius: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: ui-monospace, monospace; }
 .browser-view { height: 168px; background: color-mix(in srgb, var(--c1) 82%, #000); position: relative; overflow: hidden; display: grid; place-items: center; }
 .browser-view .logo-img { max-width: 72%; max-height: 92px; object-fit: contain; transition: transform .6s var(--ease); position: relative; z-index: 1; }
+.browser-view .logo-img.logo-lg { max-height: 150px; width: auto; }
 .site-card:hover .browser-view .logo-img { transform: scale(1.05); }
 .browser-view.has-logo { background: var(--logo-bg, #ffffff); }
 .browser-view.has-logo .mono { display: none; color: #15181e; }
@@ -443,7 +444,7 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
       <a class="site-card reveal" href="https://celtrix.in/" target="_blank" rel="noopener" style="--c1:#4a2a6b;" aria-label="Visit Celtrix website (opens in a new tab)">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">celtrix.in</span></div>
-          <div class="browser-view"><div class="mono">celtrix<small>Influencer marketing</small></div></div>
+          <div class="browser-view has-logo"><img class="logo-img logo-lg" src="images/logos/celtrix.webp" alt="Celtrix logo" width="500" height="500" loading="lazy" decoding="async" onerror="this.parentNode.classList.remove('has-logo');this.remove()"><div class="mono">celtrix<small>Influencer marketing</small></div></div>
         </div>
         <div class="site-body">
           <div class="site-top"><span class="site-tag">My product · SaaS</span><span class="site-num">01</span></div>
@@ -495,7 +496,7 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
       <a class="site-card reveal" href="https://vijayinnovation.com/" target="_blank" rel="noopener" style="--c1:#334155; --d:.08s" aria-label="Visit Vijay Innovation Technology website (opens in a new tab)">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">vijayinnovation.com</span></div>
-          <div class="browser-view has-logo"><img class="logo-img" src="https://vijayinnovation.com/logo.png" alt="Vijay Innovation Technology logo" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.remove('has-logo');this.remove()"><div class="mono">VIT<small>Vijay Innovation Technology</small></div></div>
+          <div class="browser-view has-logo" style="--logo-bg:#26292f"><img class="logo-img logo-lg" src="images/logos/vit.webp" alt="Vijay Innovation Technology logo" width="900" height="722" loading="lazy" decoding="async" onerror="this.parentNode.classList.remove('has-logo');this.remove()"><div class="mono">VIT<small>Vijay Innovation Technology</small></div></div>
         </div>
         <div class="site-body">
           <div class="site-top"><span class="site-tag">Precision manufacturing</span><span class="site-num">05</span></div>
