@@ -223,7 +223,7 @@ section { padding: 100px 0; position: relative; }
 .tag { font-size: .78rem; padding: 4px 11px; border-radius: 8px; background: var(--surface-2); color: var(--muted); border: 1px solid var(--border); }
 
 /* ---------- Projects ---------- */
-.proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .proj { display: flex; flex-direction: column; gap: 14px; transition: transform .35s var(--ease), border-color .3s; }
 .proj:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--a1) 50%, transparent); }
 .proj-icon { width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; font-size: 1.3rem; color: #fff; background: var(--grad); }
@@ -578,6 +578,21 @@ footer { padding: 30px 0 40px; border-top: 1px solid var(--border); }
       </article>
 
       <article class="proj card reveal" style="--d:.1s">
+        <div class="proj-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <h3>Wecool Payroll</h3>
+        <div class="role-line">Payroll SaaS · ECOMFLEX client project</div>
+        <p>A payroll management system that takes HR teams from attendance to payslips in one place.</p>
+        <ul>
+          <li>Attendance upload and automated salary calculation</li>
+          <li>Leave tracking and payslip generation</li>
+          <li>Role-based HR and employee portals with an audit trail</li>
+        </ul>
+        <div class="proj-links">
+          <a class="link-btn" href="https://www.wecoolpayroll.co.in/" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live site</a>
+        </div>
+      </article>
+
+      <article class="proj card reveal" style="--d:.2s">
         <div class="proj-icon"><i class="fas fa-gopuram"></i></div>
         <h3>Temple Management SaaS</h3>
         <div class="role-line">Multi-tenant SaaS · EZEU</div>
